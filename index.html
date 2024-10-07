@@ -3,51 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      body {
-        background-color: #333;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      h1{
-        text-align: center;
-      }
-
-      form > h1 ~ input,
-      form > h1 ~ div {
-        margin-block-start: 12px;
-      }
-
-      form > h1 ~ input {
-        padding-inline: 6px;
-      }
-    </style>
+    <title>tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <form action="" id="form">
-      <h1>Text Encoder</h1>
-      <input
-        type="text"
-        autocomplete="off"
-        required
-        placeholder="enter text"
-        name="input"
-      />
-      <div>
-        <input type="text" disabled id="output" />
-        <button type="button" id="copy">copy</button>
-      </div>
-      <input type="submit" value="submit" />
-      <input type="reset" value="reset" />
-    </form>
+  <body class="max-w-screen min-h-screen bg-[#333]">
+    <header class="max-w-[1600px] bg-[#ece] min-h-[40px] mx-auto flex items-center justify-center">
+      <h1 class="text-2xl font-bold">Text Encoder</h1>
+    </header>
+    <main class="max-w-[1600px] mx-auto flex justify-center pt-12">
+      <form id="form" class="max-w-[300px] w-full border-2 border-[#ece] rounded-xl px-2 pt-8 pb-4 flex flex-col text-[#ece] space-y-4">
+        <input
+          type="text"
+          autocomplete="off"
+          required
+          name="input"
+          placeholder="enter text"
+          class="bg-transparent px-2 py-1 rounded border-2 border-[#ece] text-inherit outline-none"
+        />
+        <div class="flex space-x-2">
+          <input type="text" disabled id="output" class="bg-transparent px-2 py-1 rounded border-2 border-[#ece] text-[#bda4bd] outline-none"/>
+          <button type="button" id="copy" class="rounded border-2 border-[#ece] grow ">copy</button>
+        </div>
+        <input type="submit" value="submit" class="bg-transparent px-2 py-1 rounded border-2 border-[#ece] text-inherit outline-none" />
+        <input type="reset" value="reset" class="bg-transparent px-2 py-1 rounded border-2 border-[#ece] text-inherit outline-none" />
+      </form>
+    </main>
     <script src="./index.js"></script>
   </body>
 </html>
